@@ -1,0 +1,552 @@
+/*
+* Etsy api setting  page style
+*/
+
+// menu tab style
+.rex-etsy-api-setting__tab-wrapper {
+  .rex-etsy-api-setting__tabs-area {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    li {
+      position: relative;
+      display: inline-flex;
+      flex-flow: row;
+      align-items: center;
+      padding: 13px 34px;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 6px 6px 0 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #a8a7be;
+      font-family: "Roboto";
+      font-weight: 500;
+      height: 48px;
+      &.active {
+        background: #f6f6f8;
+        color: #1fb3fb;
+        svg {
+          fill: #1fb3fb;
+        }
+      }
+      svg {
+        margin-right: 12px;
+        width: 20px;
+        height: 22px;
+        fill: #a8a7be;
+      }
+    }
+  }
+
+  .rex-etsy-api-setting__tab-content {
+    .block-wrapper {
+      background-color: #ededf3;
+      padding: 40px;
+      border-radius: 12px;
+    }
+    .tab-content {
+      display: none;
+      background: #f6f6f8;
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  /*-----------etsy-tooltip style------- */
+
+  .etsy-tooltip {
+    position: relative;
+    margin: 0px 10px 0 0px;
+  }
+  .etsy-tooltip .icon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .etsy-tooltip p {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    line-height: 24px;
+    color: #363b4e;
+    font-weight: 400;
+    background: #f8f5fd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .etsy-tooltip p:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #f8f5fd;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+  }
+  .etsy-tooltip .icon:hover + p {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .rex-etsy-api-settings {
+    .rex-etsy-api-settings__content {
+      display: flex;
+      .rex-etsy-api-settings__configure-form {
+        width: 50%;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+        padding: 25px 33px 33px;
+        margin-right: 10px;
+        .rex-etsy-api-settings__title {
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 1.25;
+          text-align: left;
+          padding-bottom: 0.8em;
+          color: #3c3e4a;
+        }
+
+        .rex-etsy-api-settings__input-field {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          .rex-etsy-api-settings__width-modify {
+            min-width: 111px;
+          }
+
+          label {
+            display: block;
+            font-size: 16px;
+            text-align: left;
+            text-transform: capitalize;
+            padding: 0.5em 0.1em 0.5em 0;
+            min-width: 131px;
+          }
+
+          input {
+            height: 40px;
+            box-shadow: none !important;
+            border-radius: 3px;
+            width: 100%;
+            border: 1px solid #e8e8e8;
+          }
+          span {
+            font-size: 17px;
+            padding: 0 3px;
+            color: red;
+          }
+          .rex-etsy-api-settings__level-area {
+            width: calc(100% - 75%);
+            display: flex;
+            align-items: center;
+          }
+          .rex-etsy-api-settings__input-area {
+            width: calc(100% - 25%);
+          }
+        }
+
+        .rex-etsy-api-settings__button-area {
+          display: flex;
+          justify-content: start;
+          margin: 0px 0 auto 186px;
+          button {
+            margin: 0 5px 0 0px;
+          }
+          button.btn-visibility {
+            border: none;
+            background: transparent;
+            margin-right: 0;
+            a {
+              border: 1px solid #1fb3fb;
+              height: 40px;
+              line-height: 1.5;
+              padding: 10px 20px;
+              font-size: 15px;
+              font-weight: 500;
+              color: #787890;
+              text-align: center;
+              border-radius: 5px;
+              text-transform: capitalize;
+              background-color: transparent;
+              -webkit-transition: all 0.5s ease;
+              -moz-transition: all 0.5s ease;
+              -ms-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all 0.5s ease;
+              &:hover {
+                background-color: #1fb3fb;
+                color: #fff;
+              }
+            }
+            &:focus {
+              outline: 0;
+            }
+          }
+        }
+
+        // input:required {
+        //   box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
+        // }
+
+        // input:required:focus {
+        //   border: 1px solid red;
+        //   outline: none;
+        // }
+
+        input:required:hover {
+          opacity: 1;
+        }
+        #rex-etsy-api-settings__secret,
+        #rex-etsy-api-settings__paycheck {
+          font-size: 14px;
+          padding: 5px 10px;
+          color: red;
+        }
+      }
+
+      .rex-etsy-api-settings__video {
+        width: 50%;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+        padding: 25px 33px 33px;
+        margin-left: 10px;
+        .video-container {
+          iframe {
+            width: 100% !important;
+          }
+        }
+      }
+
+      // tab one
+
+      .rex-etsy-api-settings__shipping-form {
+        width: 50%;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+        padding: 25px 33px 33px;
+        margin-right: 10px;
+        .rex-etsy-api-settings__title {
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 1.25;
+          text-align: left;
+          padding-bottom: 0.8em;
+          color: #3c3e4a;
+        }
+
+        .rex-etsy-api-settings__input-field {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          .rex-etsy-api-settings__width-modify {
+            min-width: 200px;
+          }
+
+          label {
+            display: block;
+            font-size: 16px;
+            text-transform: capitalize;
+            text-align: left;
+            padding: 0.5em 0.1em 0.5em 0;
+            min-width: 128px;
+          }
+          span {
+            font-size: 17px;
+            padding: 0 3px;
+            color: red;
+          }
+
+          input {
+            height: 35px;
+            box-shadow: none !important;
+            border-radius: 3px;
+            width: 100%;
+            border: 1px solid #e8e8e8;
+          }
+          select {
+            max-width: 37rem;
+          }
+          .rex-etsy-api-settings__level-area {
+            width: calc(100% - 65%);
+            display: flex;
+            align-items: center;
+          }
+          .rex-etsy-api-settings__input-area {
+            width: calc(100% - 30%);
+          }
+        }
+
+        .rex-etsy-api-settings__button-area {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        // input:required {
+        //   box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
+        // }
+
+        // input:required:focus {
+        //   border: 1px solid red;
+        //   outline: none;
+        // }
+
+        input:required:hover {
+          opacity: 1;
+        }
+      }
+
+      .rex-etsy-api-settings__shipping-table {
+        width: 50%;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+        padding: 25px 33px 33px;
+        margin-left: 10px;
+        .rex-etsy-api-settings__title {
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 1.25;
+          text-align: left;
+          padding-bottom: 0.8em;
+          color: #3c3e4a;
+        }
+
+        table {
+          width: 100%;
+          margin: 20px auto;
+          table-layout: auto;
+          border-collapse: collapse;
+          th {
+            font-size: 14px;
+            color: #3c3e4a;
+            font-weight: 500;
+            background-color: #e5f7ff;
+          }
+          td {
+            background: #f2fbff;
+          }
+          td:last-child {
+            background-color: #fdf3f3;
+          }
+          th,
+          td {
+            border-collapse: collapse;
+            padding: 13px 10px;
+            border: solid 2px #fff;
+            text-align: center;
+            button {
+              border: none;
+              background: transparent;
+            }
+          }
+        }
+        .rex-etsy-api-settings__table-btn {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive style */
+
+@media #{$device_1400_1599} {
+  .rex-etsy-api-setting__tab-wrapper {
+    .rex-etsy-api-settings {
+      .rex-etsy-api-settings__content {
+        .rex-etsy-api-settings__configure-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 55%);
+            }
+          }
+          .rex-etsy-api-settings__button-area {
+            margin: 0px 0 auto 193px;
+          }
+        }
+
+        .rex-etsy-api-settings__shipping-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 50%);
+            }
+            .rex-etsy-api-settings__input-area {
+              width: calc(100% - 50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_1200_1399} {
+  .rex-etsy-api-setting__tab-wrapper {
+    .rex-etsy-api-settings {
+      .rex-etsy-api-settings__content {
+        .rex-etsy-api-settings__configure-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 45%);
+            }
+          }
+          .rex-etsy-api-settings__button-area {
+            margin: 0px 0 auto 185px;
+            button.btn-visibility {
+              a {
+                padding: 15px 10px;
+              }
+            }
+          }
+        }
+        .rex-etsy-api-settings__shipping-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 30%);
+            }
+            .rex-etsy-api-settings__input-area {
+              width: calc(100% - 50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_992_1199} {
+  .rex-etsy-api-setting__tab-wrapper {
+    .rex-etsy-api-setting__tab-content {
+      .block-wrapper {
+        padding: 30px;
+      }
+    }
+    .rex-etsy-api-settings {
+      .rex-etsy-api-settings__content {
+        .rex-etsy-api-settings__shipping-form {
+          padding: 20px;
+          .rex-etsy-api-settings__input-field {
+            label {
+              font-size: 15px;
+            }
+            .rex-etsy-api-settings__width-modify {
+              min-width: 120px;
+            }
+          }
+        }
+        .rex-etsy-api-settings__shipping-table {
+          padding: 20px;
+        }
+        .rex-etsy-api-settings__configure-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 45%);
+            }
+          }
+          .rex-etsy-api-settings__button-area {
+            margin: 0 auto;
+          }
+        }
+
+        .rex-etsy-api-settings__shipping-form {
+          .rex-etsy-api-settings__input-field {
+            .rex-etsy-api-settings__level-area {
+              width: calc(100% - 45%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_768_991} {
+  .rex-etsy-api-setting__tab-wrapper {
+    .rex-etsy-api-settings {
+      .rex-etsy-api-settings__content {
+        .rex-etsy-api-settings__shipping-form {
+          .rex-etsy-api-settings__button-area {
+            margin: 0 0 auto 205px;
+          }
+        }
+        .rex-etsy-api-settings__configure-form {
+          .rex-etsy-api-settings__input-field {
+            display: block;
+            .rex-etsy-api-settings__level-area {
+              width: 100%;
+            }
+            .rex-etsy-api-settings__input-area {
+              width: 100%;
+            }
+          }
+          padding: 25px 20px 25px;
+          .rex-etsy-api-settings__button-area {
+            margin: 0 auto;
+          }
+        }
+        .rex-etsy-api-settings__video {
+          padding: 25px 20px 25px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_576_767} {
+  .rex-etsy-api-settings {
+    padding: 25px;
+    margin-top: 10px;
+
+    .rex-etsy-api-settings__content {
+      .rex-etsy-api-settings__configure-form {
+        padding: 25px 23px 23px;
+
+        .rex-etsy-api-settings__title {
+          font-size: 18px;
+          padding-bottom: 0.2em;
+        }
+
+        .rex-etsy-api-settings__input-field {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          label {
+            min-width: 140px;
+            padding: 0.3em 0.8em 0.3em 0;
+          }
+        }
+        .rex-etsy-api-settings__button-area {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

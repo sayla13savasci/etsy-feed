@@ -1,0 +1,13 @@
+{
+    "name": "rextheme/etsy-product-feed",
+    "require": {
+        "philipnewcomer/wp-ajax-helper": "dev-master",
+        "rhysnhall/etsy-php-sdk": "dev-master",
+        "deliciousbrains/wp-background-processing": "dev-master",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "autoload": {
+        "classmap": ["admin/"]
+    },
+    "minimum-stability": "dev"
+}

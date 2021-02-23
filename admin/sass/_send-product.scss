@@ -1,0 +1,161 @@
+.rex-etsy-api-settings__send-product {
+  width: calc(100% - 35%);
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 6px 60px 0px rgb(2 0 105 / 8%);
+  padding: 40px;
+  .rex-etsy-api-settings__product-from-area {
+    .rex-show-product-wrapper__title {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.25;
+      text-align: left;
+      padding-bottom: 0.8em;
+      color: #3c3e4a;
+      text-transform: capitalize;
+    }
+    .rex-show-product__select-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      label {
+        display: block;
+        font-size: 16px;
+        text-align: left;
+        padding: 0.5em 0.1em 0.5em 0;
+        min-width: 95px;
+        text-transform: capitalize;
+      }
+      span {
+        font-size: 17px;
+        padding: 0 3px;
+        color: red;
+      }
+
+      select {
+        max-width: 56rem;
+        text-transform: capitalize;
+      }
+
+      .rex-etsy-api-settings__level-area {
+        width: calc(100% - 85%);
+        display: flex;
+        align-items: center;
+      }
+      .rex-etsy-api-settings__input-area {
+        width: calc(100% - 10%);
+      }
+    }
+
+    .rex-show-product__search-btn-area {
+      margin-bottom: 20px;
+      .rex-show-product-wrapper__title {
+        display: block;
+        font-size: 16px;
+        text-align: left;
+        font-weight: normal;
+        padding: 0.5em 0.1em 0.5em 0;
+      }
+      .select2-container--default {
+        width: 100% !important;
+      }
+      .rex-show-product__send-btn-area {
+        margin-top: 10px;
+      }
+    }
+
+    /*-----------etsy-tooltip style------- */
+    .etsy-tooltip {
+      position: relative;
+    }
+    .etsy-tooltip .icon {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      top: 2px;
+    }
+    .etsy-tooltip p {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+      font-size: 15px;
+      line-height: 24px;
+      color: #363b4e;
+      font-weight: 400;
+      background: #f8f5fd;
+      padding: 10px 15px;
+      border-radius: 5px;
+      width: 200px;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .etsy-tooltip p:before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background: #f8f5fd;
+      transform: translateY(-50%) rotate(45deg);
+      transform-origin: center;
+    }
+    .etsy-tooltip .icon:hover + p {
+      opacity: 1;
+      visibility: visible;
+    }
+    .rex-show-product__sending-data-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+/* Responsive style */
+
+@media #{$device_1400_1599} {
+  .rex-etsy-api-settings__send-product {
+    width: calc(100% - 5%);
+    .rex-etsy-api-settings__product-from-area {
+      .rex-show-product__select-box {
+        .rex-etsy-api-settings__level-area {
+          width: calc(100% - 75%);
+        }
+        .rex-etsy-api-settings__input-area {
+          width: calc(100% - 10%);
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_992_1199} {
+  .rex-etsy-api-settings__send-product {
+    width: calc(100% - 5%);
+    .rex-etsy-api-settings__product-from-area {
+      .rex-show-product__select-box {
+        .rex-etsy-api-settings__level-area {
+          width: calc(100% - 75%);
+        }
+        .rex-etsy-api-settings__input-area {
+          width: calc(100% - 10%);
+        }
+      }
+    }
+  }
+}
+
+@media #{$device_768_991} {
+  .rex-etsy-api-settings__send-product {
+    width: calc(100% - 1%);
+    .rex-etsy-api-settings__product-from-area {
+      .rex-show-product__search-btn-area {
+        .select2-container--default {
+          // width: 610px !important;
+        }
+      }
+    }
+  }
+}

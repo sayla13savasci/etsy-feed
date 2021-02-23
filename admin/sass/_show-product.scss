@@ -1,0 +1,226 @@
+/*
+* Etsy Show product page style
+*/
+
+.rex-show-product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #ededf3;
+  padding: 75px 55px;
+  height: 100vh;
+  border-radius: 12px;
+
+  .rex-show-product-wrapper__title {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    padding-bottom: 0.8em;
+    color: #3c3e4a;
+    text-transform: capitalize;
+  }
+
+  .rex-show-product__row {
+    width: 100%;
+    max-width: 1250px;
+
+    label {
+      font-size: 16px;
+      padding: 10px 0;
+      display: block;
+    }
+
+    .rex-show-product__search-btn-area,
+    .rex-show-product__info-area {
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+      padding: 25px 33px 33px;
+    }
+
+    .rex-show-product__info-area {
+      .rex-show-product__select-box-area {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .rex-show-product__label-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .rex-show-product__send-btn-area,
+    .rex-show-product__search-btn-area {
+      margin-top: 30px;
+    }
+
+    .rex-show-product__select-input {
+      width: 100%;
+      max-width: 780px;
+    }
+  }
+
+  .rex-show-product__btn-area {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .rex-show-product__sending-data-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 1250px;
+    margin-top: 30px;
+
+    div {
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0px 6px 60px 0px rgba(2, 0, 105, 0.08);
+      padding: 25px 33px 33px;
+    }
+  }
+
+  /*-----------etsy-tooltip style------- */
+  .etsy-tooltip {
+    margin-left: 25px;
+    position: relative;
+  }
+  .etsy-tooltip .icon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+  }
+  .etsy-tooltip p {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    line-height: 24px;
+    color: #363b4e;
+    font-weight: 400;
+    background: #f8f5fd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .etsy-tooltip p:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #f8f5fd;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+  }
+  .etsy-tooltip .icon:hover + p {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* 
+* Rex-show-product-authorization 
+*/
+
+.rex-show-product-authorization {
+  background-color: #ededf3;
+  padding: 55px;
+  height: 100vh;
+  border-radius: 12px;
+  margin-top: 20px;
+
+  p {
+    text-align: center;
+    background-color: #ed4f32;
+    padding: 20px;
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+}
+
+/* Responsive style */
+
+@media #{$device_992_1199} {
+  .rex-show-product-wrapper {
+    padding: 25px;
+    margin-top: 10px;
+
+    .rex-show-product-wrapper__title {
+      font-size: 20px;
+    }
+
+    .rex-show-product__sending-data-row {
+      gap: 20px;
+      div {
+        padding: 25px 20px 27px;
+      }
+    }
+    .etsy-tooltip p {
+      top: inherit;
+      bottom: calc(100% + -20px);
+      left: inherit;
+      right: -10px;
+      transform: translateY(0);
+    }
+
+    .etsy-tooltip p:before {
+      left: inherit;
+      right: 17px;
+      top: inherit;
+      bottom: -10px;
+    }
+  }
+}
+
+@media #{$device_576_767} {
+  .rex-show-product-wrapper {
+    padding: 25px;
+    margin-top: 10px;
+
+    .rex-show-product-wrapper__title {
+      font-size: 18px;
+      padding-bottom: 0.3em;
+    }
+
+    .rex-show-product__sending-data-row {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+
+      div {
+        padding: 25px 20px 27px;
+      }
+    }
+  }
+
+  /* 
+    * Rex-show-product-authorization 
+   */
+
+  .rex-show-product-authorization {
+    padding: 20px;
+    margin-top: 10px;
+
+    p {
+      padding: 18px;
+    }
+  }
+}
